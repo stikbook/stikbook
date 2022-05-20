@@ -16,11 +16,8 @@ const ProductDetails = () => {
   const { image, title, price, category, description } = product;
   const dispatch = useDispatch();
   const fetchProductDetail = async (id) => {
-    const response = await axios
-      .get(`https://fakestoreapi.com/products/${id}`)
-      .catch((err) => {
-        console.log("Err: ", err);
-      });
+    const response = await axios.get(`https://fakestoreapi.com/products/${id}`)
+      
     dispatch(selectedProducts(response.data));
   };
 

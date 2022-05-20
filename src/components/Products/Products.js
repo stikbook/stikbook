@@ -8,11 +8,7 @@ export const Products = () => {
     const dispatch=useDispatch();
   const fetchProducts=async()=>
   {
-      const response =await axios.get("https://fakestoreapi.com/products"). catch((err)=>
-      {
-          console.log("Err", err);
-      });
-      
+      const response =await axios.get("https://fakestoreapi.com/products");      
       dispatch(setProducts(response.data));
   };
 useEffect(()=>
