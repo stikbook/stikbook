@@ -6,8 +6,8 @@ import Nav from '../nav/nav';
 import Contact from '../contact/contact';
 import Stores from '../stores/stores';
 import Deals from '../deals/deals';
-import Products from '../prod/products';
-import ProductDetails from '../prod/productDetails';
+import Products from '../products/products';
+import ProductDetails from '../products/productDetails';
 
 
 
