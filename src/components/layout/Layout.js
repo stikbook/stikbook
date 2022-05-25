@@ -1,15 +1,13 @@
-import React from 'react'
-import { BrowserRouter,Routes, Route } from 'react-router-dom'
-import About from '../about/About';
-import Home from '../home/Home';
-import Nav from '../navbar/Nav';
-import Contact from '../contact/Contact';
-import Stores from '../stores/Stores';
-import Deals from '../deals/Deals';
-import Products from '../products/Products';
-import ProductDetails from '../products/ProductDetails';
-
-
+import React from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import About from "../about/About";
+import Home from "../home/Home";
+import Nav from "../navbar/Nav";
+import Contact from "../contact/Contact";
+import Stores from "../stores/Stores";
+import Deals from "../deals/Deals";
+import Products from "../products/Products";
+import ProductDetails from "../products/ProductDetails";
 
 const Layout = () => {
   return (
@@ -26,7 +24,7 @@ const Layout = () => {
         </Route>
       </Routes>
     </BrowserRouter>
-  )
-}
+  );
+};
 
-export default Layout
+export default Layout;
