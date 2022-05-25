@@ -18,7 +18,7 @@ const ProductComponent = () => {
 
   
    return(
-      <div className="ag-theme-alpine" style={{height: 1000, width: 1000}}>test
+      <div className="ag-theme-alpine" style={{height: 1000, width: 1000}}>
         <AgGridReact
           rowData={rowData} 
           columnDefs={columnDefs}>
