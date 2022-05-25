@@ -1,11 +1,11 @@
 import React from 'react'
 import { BrowserRouter,Routes, Route } from 'react-router-dom'
-import About from '../about/about';
-import Home from '../home/home';
-import Nav from '../nav/nav';
-import Contact from '../contact/contact';
-import Stores from '../stores/stores';
-import Deals from '../deals/deals';
+import About from '../about/About';
+import Home from '../home/Home';
+import Nav from '../nav/Nav';
+import Contact from '../contact/Contact';
+import Stores from '../stores/Stores';
+import Deals from '../deals/Deals';
 import Products from '../products/products';
 import ProductDetails from '../products/productDetails';
 
