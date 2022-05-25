@@ -10,7 +10,6 @@ import Products from '../products/products';
 import ProductDetails from '../products/productDetails';
 
 
-
 const Layout = () => {
   return (
     <BrowserRouter>
