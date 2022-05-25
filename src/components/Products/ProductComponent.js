@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 import { AgGridReact } from 'ag-grid-react';
 import 'ag-grid-community/dist/styles/ag-grid.css';
 import 'ag-grid-community/dist/styles/ag-theme-alpine.css';
-import { Column } from './Column';
+import { Column } from './column';
 
 const ProductComponent = () => {
 
