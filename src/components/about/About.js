@@ -18,7 +18,7 @@ const About = () => {
       <div>
         <ul>
           {data.map((comment) => (
-            <li key={comment.name}>{comment.name}</li>
+            <li key={comment.name}>Name : {comment.name}</li>
           ))}
         </ul>
       </div>
