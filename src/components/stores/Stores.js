@@ -23,7 +23,6 @@ const Stores = () => {
         <FormControl>
               <FormLabel id="demo-radio-buttons-group-label">Order</FormLabel>
               <RadioGroup
-                aria-labelledby="demo-radio-buttons-group-label"
                 defaultValue="delivery"
                 name="radio-buttons-group"
               >

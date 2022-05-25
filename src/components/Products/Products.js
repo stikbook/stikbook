@@ -14,7 +14,7 @@ export const Products = () => {
 useEffect(()=>
 {
 fetchProducts();
-},[])
+})
   return (
     <div>  
 <ProductComponent>
