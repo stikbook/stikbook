@@ -1,7 +1,7 @@
 import React from "react";
 import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
-import { setData } from "../redux/actions/loadData";
+import { setData } from "../../redux/actions/loadData";
 
 const About = () => {
   let data = useSelector((state) => state.data.data);

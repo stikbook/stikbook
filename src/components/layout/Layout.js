@@ -1,14 +1,13 @@
 import React from 'react'
 import { BrowserRouter,Routes, Route } from 'react-router-dom'
-import About from './About';
-import Home from './Home';
-import Nav from './Nav';
-import Contact from './Contact';
-import Stores from './Stores';
-import Deals from './Deals';
-import Products from './Products/Products';
-import ProductDetails from './Products/ProductDetails';
-
+import About from '../about/about';
+import Home from '../home/home';
+import Nav from '../nav/nav';
+import Contact from '../contact/contact';
+import Stores from '../stores/stores';
+import Deals from '../deals/deals';
+import Products from '../products/products';
+import ProductDetails from '../products/productDetails';
 
 
 const Layout = () => {
