@@ -1,64 +1,88 @@
-import React, { useState } from 'react'
-import { Button } from '@mui/material'
+import React, { useState} from "react";
+import CalculatorKey from "../deals/CalculatorKey";
+import "./Calculator.css";
 
-const products = [
-  {
-    emoji: '🍦',
-    name: 'ice cream',
-    price: 5
-  },
-  {
-    emoji: '🍩',
-    name: 'cream donut',
-    price: 3
-  },
-  {
-    emoji: '🍉',
-    name: 'watermelon',
-    price: 4
-  }  
-]
+function Calculator() {
+  const [prevValue, setPrevValue] = useState(0);
+  const [nextValue, setNextValue] = useState(0);
+  const [finalValue,setFinalValue] = useState(0);
+  const [op, setOp] = useState(null);
+  const CalculatorOperations = ["/","*","+","-","="]
 
-const currencyOptions = {
-  minimumFractionDigits: 2,
-  maximumFractionDigits: 2,
-}
+  let displayString = `${prevValue === 0 ? "":prevValue} ${(op === null) ? "": op} ${nextValue}`
 
-const Deals = () => {
-      const [cart,setCart] = useState([]);
-      const [total,setTotal] = useState(0);
+  const handleNum = (number) =>{
+    setNextValue((nextValue === 0 ) ? String(number) : (String(nextValue) + number).replace(/^0+/, ''));
+  }
 
-      function getTotal(total) {
-          return total.toLocaleString(total, currencyOptions)
+  const clearData = () => {
+    setOp(null);
+    setNextValue(0);
+    setPrevValue(0);
+  };
+
+  const handleOperation = (value) =>{
+    if(Number.isInteger(value)){
+      if(finalValue !== 0){
+        setFinalValue(0)
+        setNextValue(String(value))
+      }else
+      {
+        handleNum(parseInt(value,10));
       }
-
-      function add(product){
-        setCart(current => [...current, product.name])
-        setTotal(current => current+product.price)
+    }else if (CalculatorOperations.includes(value)) {
+      if (op === null) {
+        setOp(value);
+        setPrevValue(nextValue);
+        setNextValue("");
       }
-
-      return (
-        <div className="wrapper">
-          <div>
-            Shopping Cart: {cart.length} total items.
-          </div>
-
-          <div>
-            Total: {getTotal(total)}
-          </div>
-          <div>
-                {products.map(product=>
-                (
-                  <div key={product.name}>
-                  <div className="product"><span role="img" aria-label={product.name}>{product.emoji}</span></div>
-                  <Button variant="contained" onClick={()=>add(product)}>Add</Button> 
-                  <Button variant="contained">Remove</Button>
-                  </div>))
-                }
-          </div>
-
+      if (prevValue && op && nextValue) {
+        var temp = 0
+        if(op === "+")
+        {
+          temp = (parseFloat(prevValue)+parseFloat(nextValue))
+        }
+        else if (op === "-") {
+          temp = (prevValue-nextValue)
+        }
+        else if (op === "*") {
+          temp = (prevValue*nextValue)
+        }
+        else if (op === "/") {
+          temp = (prevValue/nextValue)          
+        }
+        setNextValue(temp)
+        if (value === "=") {
+          setFinalValue(nextValue)
+          setOp(null);
+          setPrevValue(0);
+        }
+        else{
+          setPrevValue(temp)
+          setOp(value)
+          setNextValue("")
+        }
+      }
+    } else if (value === "c") {clearData();}
+  }
+  return (
+    <div className="calculator">
+      <div className="calculator-input">
+        <div>{displayString}</div>
+      </div>
+      <div className="calculator-keypad">
+        <div className="keys-operators">
+        {CalculatorOperations.map((i)=>(<CalculatorKey keyValue={i} onClick={handleOperation} />))}
         </div>
-      )
+        <div className="keys-numbers">
+          {[0,1,2,3,4,5,6,7,8,9].map((i)=>(<CalculatorKey keyValue={i} onClick={handleOperation} />))}
+        </div>
+        <div className="keys-function">
+          <CalculatorKey keyValue="c" onClick={handleOperation} />
+        </div>
+      </div>
+    </div>
+  );
 }
 
-export default Deals
+export default Calculator;
