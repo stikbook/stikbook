@@ -41,6 +41,9 @@ function Calculator() {
         setPrevValue(nextValue);
         setNextValue("");
       }
+      else{
+        setOp(value);
+      }
       if (prevValue && op && nextValue) {
         var temp = 0;
         if (op === "+") {
