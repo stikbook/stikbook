@@ -8,6 +8,7 @@ import Stores from '../stores/Stores';
 import Deals from '../deals/Deals';
 import Products from '../products/products';
 import ProductDetails from '../products/productDetails';
+import Cart from '../cart/Cart'
 
 
 const Layout = () => {
@@ -22,6 +23,8 @@ const Layout = () => {
           <Route path="deals" element={<Deals />} />
           <Route path="products" element={<Products />} />
           <Route path="/product/:productId" element={<ProductDetails />} />
+          <Route path="cart" element={<Cart />} />
+
         </Route>
       </Routes>
     </BrowserRouter>
