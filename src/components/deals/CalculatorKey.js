@@ -1,11 +1,11 @@
 import React from "react";
-import "./CalculatorKey.css";
+import { Button } from "./Styles";
 
 function CalculatorKey(props) {
   return (
-    <button onClick={() => props.onClick(props.keyValue)}>
+    <Button onClick={() => props.onClick(props.keyValue)}>
       {props.keyValue}
-    </button>
+    </Button>
   );
 }
 
