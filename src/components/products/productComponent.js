@@ -12,13 +12,13 @@ const ProductComponent = () => {
   const[columnDefs, setcolumnDefs]= useState();
 
   useEffect(() => {
-    setcolumnDefs(Column)
+    setcolumnDefs(Column.columnDefs)
     setrowData(RowData)
   });
 
   
    return(
-      <div className="ag-theme-alpine" style={{height: 1000, width: 1000}}>
+      <div className="ag-theme-alpine" style={{height: 1000, width: 1500}}>
         <AgGridReact
           rowData={rowData} 
           columnDefs={columnDefs}>
