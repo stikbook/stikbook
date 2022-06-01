@@ -1,5 +1,6 @@
-import React from "react";
+
 import AddRemoveProductCellRenderer from "./productCount/addRemoveProduct";
+//import FinalPriceRenderer from "./finalPrice/finalPrice"
 import { Link } from "react-router-dom";
 
 const imageFormatter = ({ value }) => {
@@ -9,48 +10,60 @@ const idLink = ({ value }) => {
   return <Link to={`/product/${value}`}> {value} </Link>;
 };
 
+const AddRemoveProduct = ({ value }) => {
+  return <AddRemoveProductCellRenderer ID={value}></AddRemoveProductCellRenderer>
+};
+
 export const Column = {
   columnDefs: [
     {
       field: "id",
       headerName: "ID",
-      cellRendererFramework: idLink,
+      cellRenderer: idLink,
       filter: "agTextColumnFilter",
     },
     {
       field: "title",
       headerName: "Title",
-      cellRenderer: undefined,
       filter: "agTextColumnFilter",
     },
 
     {
       field: "image",
       headerName: "Image",
-      cellRendererFramework: imageFormatter,
+      cellRenderer: imageFormatter,
       filter: "agTextColumnFilter",
     },
 
     {
       field: "price",
       headerName: "Price",
-      cellRenderer: undefined,
+      
       filter: "agTextColumnFilter",
     },
     {
       field: "category",
       headerName: "Category",
-      cellRenderer: undefined,
+      
       filter: "agTextColumnFilter",
     },
     {
-      field: "count",
+      //field: "count",
+      field: "id",
       headerName: "Count",
-      cellRenderer: AddRemoveProductCellRenderer,
+      cellRenderer: AddRemoveProduct,
       filter: "agTextColumnFilter",
     },
+    // {
+    //   field: "finalPrice",
+    //   headerName: "Final Price",
+    //   cellRenderer: FinalPriceRenderer,
+    //   filter: "agTextColumnFilter",
+    // },
   ],
-  frameworkComponents: {
-    addRemoveProductCellRenderer: AddRemoveProductCellRenderer,
+   frameworkComponents: {
+     //addRemoveProductCellRenderer: AddRemoveProductCellRenderer,
+  //   FinalPriceRenderer: FinalPriceRenderer,
   },
 };
+

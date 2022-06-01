@@ -1,7 +1,8 @@
 import {actionTypes} from "../constants/actionTypes"
 const iniState=
 {
-    products:[]
+    products:[],
+    total:0
 }
 export const productReducer =(state=iniState,{type,payload})=>
 {
@@ -28,3 +29,19 @@ export const productReducer =(state=iniState,{type,payload})=>
              return state;
  }
 }
+
+export const addQuantity =(state=iniState,action)=>
+{
+ switch(action.type)
+ {
+    case actionTypes.ADD_QUANTITY:
+     state.total=state.total + 1
+         return {...state, total: state.total};
+
+    default:
+             return state;
+ }
+}
+
+
+

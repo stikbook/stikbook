@@ -16,3 +16,11 @@ export const selectedProducts=(product)=>
     };
 } 
 
+
+export const addQuantity=(id)=>
+{
+    return{
+        type: actionTypes.ADD_QUANTITY,
+        payload: id,
+    }
+} 
